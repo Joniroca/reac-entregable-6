@@ -1,4 +1,4 @@
-import LoginForm from "../../components/Login/LoginForm";
+import LoginForm from "../../components/login/LoginForm";
 import "./Login.css";
 // import login from "../../services/auth/login";
 import { startSessionThunk } from "../../store/slices/authSlice";
