@@ -4,6 +4,11 @@ import "./ProductCard.css";
 import { Link, useNavigate } from "react-router-dom";
 import useCart from "../../../hooks/queries/useCart";
 
+import "./ProductCard.css";
+
+// Clase 31 2 horas del video aproximadamente empezamos la construcción de este componente que no funciona el tema deel cmabio de imagen.
+// Al parecer todo esta bien pero algo debe estar pasando porque no se lleva a cabo el cambio atomatico de imagenes desde el css --hidden --visible.
+
 const ProductCard = ({ product }) => {
   const isLogged = useSelector((store) => store.auth.isLogged);
   const { mutate } = useAddProductToCart();
@@ -28,17 +33,17 @@ const ProductCard = ({ product }) => {
 
   return (
     // Si tengo problemas de navegación deberia revisar el axiosInstance y los / fordward slah ya que es posible que se este duplicando
-    <Link to={"/product/" + product.id}>
+    <Link to={"product/" + product.id}>
       <article className="product-card">
         <header className="product-card__header">
           <div className="product-card__container-img">
             <img
-              className="product-card__img product-card__img--visible"
+              className="product-card__img product-card__container-img--visible"
               src={product.images[0].url}
-              alt={product.title + "image 1"}
+              alt={product.title + "image 0"}
             />
             <img
-              className="product-card__img product-card__img--hidden"
+              className="product-card__img product-card__container-img--hidden"
               src={product.images[1].url}
               alt={product.title + "image 1"}
             />

@@ -6,6 +6,8 @@
 .product-card__container-img {
     position: relative;
     height: 20rem;
+
+    /* border: thin solid red; */
 }
 
 
@@ -22,22 +24,23 @@
     transition: opacity 0.3s ease-in;
 }
 
-.product-card__img--hidden {
+.product-card__container-img--hidden {
     opacity: 0;
 }
 
-.product-card__img--visible {
+.product-card__container-img--visible {
     opacity: 1;
 }
 
-.product-card__img:hover {
+/* .product-card__container-img:hover {
     border: thin solid red;
-}
+    color: yellowgreen;
+} */
 
-.product-card__img:hover img.product-card__img--hidden {
+.product-card__container-img:hover img.product-card__container-img--hidden {
     opacity: 1;
 }
 
-.product-card__img:hover img.product-card__img--visible {
+.product-card__container-img:hover img.product-card__container-img--visible {
     opacity: 0;
 }
