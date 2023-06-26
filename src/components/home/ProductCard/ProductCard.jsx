@@ -33,7 +33,7 @@ const ProductCard = ({ product }) => {
 
   return (
     // Si tengo problemas de navegación deberia revisar el axiosInstance y los / fordward slah ya que es posible que se este duplicando
-    <Link to={"product/" + product.id}>
+    <Link to={"/product/" + product.id}>
       <article className="product-card">
         <header className="product-card__header">
           <div className="product-card__container-img">

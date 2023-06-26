@@ -3,7 +3,7 @@ import axiosInstance from "../../api/axiosInstance"; //me ponia que no estaba de
 const getAllCategories = async () => {
   try {
     // falta importar axios instance
-    const res = await axiosInstance.get(`categories/`);
+    const res = await axiosInstance.get(`categories`);
 
     return res.data;
   } catch (err) {

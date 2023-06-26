@@ -5,7 +5,9 @@ import NavBar from "./common/NavBar/NavBar";
 function App() {
   return (
     <>
-      <NavBar />
+      <NavBar
+        updateCartVisible={() => console.log("Función en construcción")}
+      />
 
       <main>
         <Outlet />

@@ -5,7 +5,7 @@ import "./ProductList.css";
 const ProductList = ({ categories, title, excludeIds = [] }) => {
   const { data, isLoading, isError } = useProducts(categories, title);
 
-  if (isLoading) return <p>Loaidng products...</p>;
+  if (isLoading) return <p>Loading products...</p>;
   if (isError) return <p>Opps, algo salío mal</p>;
 
   return (

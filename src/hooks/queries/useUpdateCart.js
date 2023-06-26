@@ -13,6 +13,7 @@ const useUpdateCart = () => {
       await queryClient.invalidateQueries({ queryKey: ["cart"] });
     },
   });
+  return mutation;
 };
 
 export default useUpdateCart;

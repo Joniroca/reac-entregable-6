@@ -9,6 +9,7 @@ import useCart from "../../hooks/queries/useCart";
 const ProductDetail = () => {
   const navigate = useNavigate();
   const { productId } = useParams();
+  // console.log(productId);
   const isLogged = useSelector((store) => store.auth.isLogged);
   const cartQuery = useCart();
   const { mutate } = useAddProductToCart();
@@ -22,6 +23,7 @@ const ProductDetail = () => {
     cartQuery.data?.find(
       (cartProduct) => Number(cartProduct.productId) === Number(productId)
     )?.quantity ?? 1;
+
   const [quantity, setQuantity] = useState(Number(quantityInCart));
 
   //  SE COPIA Y SE LLEVA AL COMPONENTE CartProduct
@@ -83,7 +85,11 @@ const ProductDetail = () => {
           {isProductInCart && <button>Update in cart...</button>}
         </div>
       </section>
-      <ProductList categories={data.categoryId} excludeIds={[data.id]} />
+      <ProductList
+        categories={data.categoryId}
+        excludeIds={[data.id]}
+        // title={data.title}
+      />
     </section>
   );
 };
