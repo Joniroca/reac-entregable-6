@@ -1,17 +1,26 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
 import NavBar from "./common/NavBar/NavBar";
+import Index from ".";
+import Cart from "./common/Cart/Cart";
+import { useState } from "react";
 
 function App() {
+  const [isCartVisible, setIsCartVisible] = useState(false);
+
+  const toggleVisibilityCart = () => {
+    setIsCartVisible(!isCartVisible);
+  };
   return (
     <>
-      <NavBar
-        updateCartVisible={() => console.log("Función en construcción")}
-      />
+      <Index />
+      <NavBar updateCartVisible={toggleVisibilityCart} />
 
       <main>
         <Outlet />
       </main>
+
+      <Cart isVisible={isCartVisible} />
     </>
   );
 }
