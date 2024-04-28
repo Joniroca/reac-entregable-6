@@ -1,4 +1,5 @@
 import axiosInstance from "../../api/axiosInstance"; //me ponia que no estaba definido
+
 const getAllProducts = async (categories, title) => {
   try {
     const params = { title, categoryId: categories };

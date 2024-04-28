@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useProductById from "../../hooks/queries/useProductById";
 import ProductList from "../../components/home/ProductList/ProductList";
@@ -30,12 +30,12 @@ const ProductDetail = () => {
   const increment = () => {
     const newQuantity = quantity + 1;
     const stock = 10;
-    if (newQuantity >= stock) setQuantity(newQuantity);
+    if (newQuantity <= stock) setQuantity(newQuantity);
   };
   const decrement = () => {
     const newQuantity = quantity - 1;
     const minStock = 1;
-    if (newQuantity <= minStock) setQuantity(newQuantity);
+    if (newQuantity >= minStock) setQuantity(newQuantity);
   };
 
   const handleAddCart = () => {
@@ -47,7 +47,7 @@ const ProductDetail = () => {
     setQuantity(Number(quantityInCart));
   }, [quantityInCart]);
 
-  if (isLoading) return <p>Loading DATA...</p>;
+  if (isLoading) return <p>Loading DATA product...</p>;
   if (isError)
     return <p> {error.message ?? "No se pudo cargar el producto"} </p>;
 
