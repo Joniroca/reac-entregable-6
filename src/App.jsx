@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
 import NavBar from "./common/NavBar/NavBar";
-import Index from ".";
+import Index from "./Index";
 import Cart from "./common/Cart/Cart";
 import { useState } from "react";
 
