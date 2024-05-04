@@ -25,6 +25,23 @@ const Login = () => {
     <div>
       <section>
         <p>Welcome to Colombia</p>
+        <div>
+          <h3>Test Data</h3>
+          <ul>
+            <li>testa111@gmail.com</li>
+            <li>1234</li>
+            <li>
+              <p>or you can create your own at: </p>
+              <a
+                href="https://dashing-puppy-89779d.netlify.app/#/signup"
+                target="_blank"
+                rel="noreferrer"
+              >
+                https://dashing-puppy-89779d.netlify.app/#/signup
+              </a>
+            </li>
+          </ul>
+        </div>
 
         <section>
           <LoginForm onLogin={handleLogin} />
