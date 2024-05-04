@@ -27,6 +27,23 @@ const LoginForm = ({ onLogin }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
+        <h3>Test Data</h3>
+        <ul>
+          <li>testa111@gmail.com</li>
+          <li>1234</li>
+          <li>
+            <p>or you can create your own at: </p>
+            <a
+              href="https://dashing-puppy-89779d.netlify.app/#/signup"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://dashing-puppy-89779d.netlify.app/#/signup
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
         <label htmlFor={nameId}>EMAIL</label>
       </div>
       <input
