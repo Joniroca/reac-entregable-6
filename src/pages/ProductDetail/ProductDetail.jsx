@@ -8,15 +8,15 @@ import useCart from "../../hooks/queries/useCart";
 
 const ProductDetail = () => {
   const navigate = useNavigate();
+  const cartQuery = useCart();
+  const isLogged = useSelector((store) => store.auth.isLogged);
   const { productId } = useParams();
   // console.log(productId);
-  const isLogged = useSelector((store) => store.auth.isLogged);
-  const cartQuery = useCart();
   const { mutate } = useAddProductToCart();
   const { data, isLoading, isError, error } = useProductById(productId);
 
   let isProductInCart =
-    cartQuery.data?.some((cartProduct) => cartProduct.productId === data.id) ??
+    cartQuery.data?.some((cartProduct) => cartProduct.productId === data?.id) ??
     false;
 
   const quantityInCart =
@@ -45,11 +45,13 @@ const ProductDetail = () => {
 
   useEffect(() => {
     setQuantity(Number(quantityInCart));
-  }, [quantityInCart]);
+  }, [quantityInCart, data]);
 
   if (isLoading) return <p>Loading DATA product...</p>;
   if (isError)
     return <p> {error.message ?? "No se pudo cargar el producto"} </p>;
+  // Verifica si 'data' tiene un valor antes de acceder a su propiedad 'id'
+  if (!data) return <p>No data available</p>;
 
   return (
     <section>

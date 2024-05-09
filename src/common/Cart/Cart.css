@@ -39,8 +39,10 @@
 .cart__container-list {
   flex-grow: 1;
   flex-direction: column;
+  display: flex;
 
   overflow: hidden;
+  /* overflow-y: auto; */
 }
 
 .cart__list {

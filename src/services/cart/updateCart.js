@@ -4,7 +4,7 @@ const updateCart = async ({ cartProductId, newQuantity, token }) => {
   try {
     const body = { quantity: newQuantity };
     await axiosInstance.put(`cart/${cartProductId}`, body, {
-      headers: { Autorizathion: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}` },
     });
   } catch (error) {
     if (error.response.data)
