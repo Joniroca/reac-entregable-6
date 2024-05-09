@@ -39,34 +39,33 @@ const Cart = ({ isVisible }) => {
 
         {!data.length && <p>tu carrito NO tiene productos</p>}
 
-        {Boolean(data.length) &&
-          data.map(
-            <div className="cart__container-list">
-              <ul className="cart__list">
-                {data.map((cartProduct) => (
-                  <li key={cartProduct.id}>
-                    <CartProduct cartProduct={cartProduct} />
-                  </li>
-                ))}
-              </ul>
+        {Boolean(data.length) && (
+          <div className="cart__container-list">
+            <ul className="cart__list">
+              {data.map((cartProduct) => (
+                <li key={cartProduct.id}>
+                  <CartProduct cartProduct={cartProduct} />
+                </li>
+              ))}
+            </ul>
 
+            <div>
               <div>
-                <div>
-                  <p>
-                    <span>TOTAL:</span>
-                    <em>$ {total.toFixed(2)}</em>
-                  </p>
+                <p>
+                  <span>TOTAL:</span>
+                  <em>$ {total.toFixed(2)}</em>
+                </p>
 
-                  <button
-                    onClick={handleCheckout}
-                    disabled={createPurchseMutation.isLoading || isLoading}
-                  >
-                    Checkout
-                  </button>
-                </div>
+                <button
+                  onClick={handleCheckout}
+                  disabled={createPurchseMutation.isLoading || isLoading}
+                >
+                  Checkout
+                </button>
               </div>
             </div>
-          )}
+          </div>
+        )}
       </aside>
     </div>
   );

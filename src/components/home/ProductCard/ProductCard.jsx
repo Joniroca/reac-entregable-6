@@ -15,11 +15,11 @@ const ProductCard = ({ product }) => {
   const { data, isLoading } = useCart();
   const navigate = useNavigate();
 
-  let isProductInCart = data?.some(
+  const isProductInCart = data?.some(
     (cartProduct) => cartProduct.productId === product.id
   );
 
-  const isAddBtnVisible = !isLogged || !isProductInCart;
+  const isAddVisible = !isLogged || !isProductInCart;
 
   const handleAdd = (e) => {
     // e.stopPropagation();
@@ -60,7 +60,7 @@ const ProductCard = ({ product }) => {
           </p>
         </section>
 
-        {isAddBtnVisible && (
+        {isAddVisible && (
           <button
             className="product-card__btn"
             onClick={handleAdd}
@@ -70,7 +70,7 @@ const ProductCard = ({ product }) => {
           </button>
         )}
 
-        {!isAddBtnVisible && <p>Ya tienes este producto en el carrito</p>}
+        {!isAddVisible && <p>Ya tienes este producto en el carrito</p>}
       </article>
     </Link>
   );

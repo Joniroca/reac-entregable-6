@@ -1,3 +1,5 @@
+import axiosInstance from "../../api/axiosInstance";
+
 const addProductToCart = async ({ token, quantity, productId }) => {
   try {
     const body = { quantity, productId };
