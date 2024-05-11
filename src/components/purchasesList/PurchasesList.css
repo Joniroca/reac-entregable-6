@@ -1,13 +1,17 @@
-.product-card {
+.purchase-card {
   border: 1px solid rebeccapurple;
   border-radius: 1rem;
+  /* list-style: none; */
+}
+
+.purchasae-card__header {
+  height: 30rem;
+  max-height: max-content;
 }
 
 .product-card__container-img {
   position: relative;
   height: 20rem;
-
-  /* border: thin solid red; */
 }
 
 .product-card__img {
@@ -25,16 +29,20 @@
 
 .product-card__container-img--hidden {
   opacity: 0;
+  /* overflow: hidden; */
 }
 
 .product-card__container-img--visible {
   opacity: 1;
+  /* overflow: hidden; */
 }
 
-/* .product-card__container-img:hover {
+.product-card__container-img:hover {
   border: thin solid red;
+  border-radius: 1rem;
   color: yellowgreen;
-} */
+  overflow: hidden;
+}
 
 .product-card__container-img:hover img.product-card__container-img--hidden {
   opacity: 1;
