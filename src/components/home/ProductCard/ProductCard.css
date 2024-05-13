@@ -1,3 +1,6 @@
+/* .product-card__header {
+  list-style: none;
+} */
 .product-card {
   border: 1px solid rebeccapurple;
   border-radius: 1rem;

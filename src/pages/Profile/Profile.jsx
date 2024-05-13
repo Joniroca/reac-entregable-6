@@ -1,7 +1,13 @@
-import React from "react";
+import useGetProfile from "../../hooks/queries/useGetProfile";
 
 const Profile = () => {
-  return <div>Profile</div>;
+  const { data } = useGetProfile();
+  console.log(data);
+  return (
+    <div>
+      <h3>Profile</h3>
+    </div>
+  );
 };
 
 export default Profile;
